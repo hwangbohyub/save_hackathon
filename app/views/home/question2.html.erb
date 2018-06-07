@@ -1,0 +1,39 @@
+<%= render 'header' %>
+<div class="wrap_home">
+  <div class="inform">
+      <strong>D에 들어갈 시간은?</br></br></strong>
+  </div>
+  <form action="/home/answer2" name="inputform" id="frm" method = 'post'>
+      <div class= writeAnswer>
+        <div class="col">
+          <div class="lock">
+            <div class = "bt_up">▲</div>
+            <input type = "text" name ="text1" class="num" value="0" readonly></input>
+            <div class = "bt_down">▼</div>
+          </div>
+            
+          <div class="lock">
+            <div class = "bt_up">▲</div>
+            <input type = "text" name ="text2" class="num" value="0" readonly></input>
+            <div class = "bt_down">▼</div>
+          </div>
+            
+          <div class="lock">
+            <div class = "bt_up">▲</div>
+            <input type = "text" name ="text3" class="num" value="0" readonly></input>
+            <div class = "bt_down">▼</div>
+          </div>
+            
+          <div class="lock">
+            <div class = "bt_up">▲</div>
+            <input type = "text" name ="text4" class="num" value="0" readonly></input>
+            <div class = "bt_down">▼</div>
+          </div>
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary" value="제출" id="chb" >
+  </form>
+  <div class="timer"><%=@time%></div>
+  <div id="yes"><%=session[:wrong]%></div>
+  
+</div>

@@ -1,0 +1,258 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: #384150;
+  font-family: 'Jua', sans-serif;
+}
+
+.header{
+  width:100%;
+  height: 50px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #313b47;
+  color: #ffffff;
+}
+
+#header_logo{
+  font-size:1.2em;
+  font-family: 'Righteous', cursive;
+}
+
+.custom-control {
+  margin-bottom: 15px;
+}
+
+.timer {
+  display: none;
+}
+
+.wrap_home {
+  width: 100%;
+  padding-bottom: 50px;
+  background-color: #384150;
+  text-align: center;
+  color: #ffffff;
+
+}
+
+.wrap_scene {
+  text-align: center;
+}
+
+.wrap_scene p {
+  position: absolute;
+  top: 50%;
+}
+
+.wrap_scene a {
+  position: absolute;
+  top: 80%;
+
+}
+
+.wrap_home .inform {
+  padding: 80px 0px;
+  font-size: 18px;
+}
+
+.wrap_home .lock {
+    margin-right: 7px;
+    margin-bottom: 7px;
+    color: #cebb9a;
+}
+
+.wrap_home .num, .wrap_home .str {
+  width: 40px;
+  height: 50px;
+  text-align: center;
+  border: 3px solid #cebb9a;
+  background-color: #57616d;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.writeAnswer {
+  margin-bottom: 20px;
+}
+
+.wrap_home .long {
+  width: 260px;
+  height: 50px;
+  text-align: center;
+  border: 3px solid #cebb9a;
+  background-color: #57616d;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+
+
+#yes {
+  margin-top: 15px;
+  background-color: #eab4bd;
+}
+
+
+//가운데 정렬만 해줌
+.col {
+  display: flex;
+  justify-content: center;
+}
+
+.cols {
+  display: flex;
+  flex-direction: column;
+}
+
+.ra {
+  width: 400px;
+}
+
+.scene0 {
+  background-image: url(/assets/s0.jpg);
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+}
+.scene1 {
+  background-image: url(/assets/s1.jpg);
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+}
+
+.scene2 {
+  background-image: url(/assets/s2.jpg);
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+}
+
+.scene3 {
+  background-image: url(/assets/s3.jpg);
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+}
+.scene4 {
+  background-image: url(/assets/s04.jpg);
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+}
+  
+.scene4_2 {
+  background-image: url(/assets/s04_2.jpg);
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+}
+
+.scene4_3 {
+  background-image: url(/assets/s04_3.jpg);
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+}
+
+.scene5 {
+  background-image: url(/assets/s05.jpg);
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+}
+
+.scene6 {
+  background-image: url(/assets/s06.jpg);
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,19 @@
+<%= render 'header' %>
+<div class="wrap_home">
+  <div class="inform">
+    <img src="/assets/res.jpeg" width="300px"></img>
+    </div>
+      <div class= writeAnswer>
+          
+      <div class= "cols">
+        <p>
+            당신의 너그러운 마음에 감동을 받았습니다 ㅠㅠ <br>
+            감사의 의미로 저희 팀 스티커를 드리겠습니다! <br>
+            감사합니다♡
+        </p>
+      </div>
+    </div>
+    <a class="btn btn-primary" href="/home/score" role="button">확인</a>
+  <div class="timer"><%=@time%></div>
+  <div id="yes"><%=session[:wrong]%></div>
+</div>

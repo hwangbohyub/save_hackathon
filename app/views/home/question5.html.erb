@@ -1,0 +1,21 @@
+<%= render 'header' %>
+<div class="wrap_home">
+  <div class="inform">범인을 어떻게하지?!</div>
+  <form action="/home/answer5" method="post">
+    <div class="col">
+    <div class="cols ra">
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio1" name="sel" class="custom-control-input" value="sel1">
+        <label class="custom-control-label" for="customRadio1">너그럽게 선처한다</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio2" name="sel" class="custom-control-input" value="sel2">
+        <label class="custom-control-label" for="customRadio2">교수님께 고발한다</label>
+      </div>
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary" >다음</button>
+  </form>
+  <div class="timer"><%=@time%></div>
+  <div id="yes"><%=session[:wrong]%></div>
+</div>

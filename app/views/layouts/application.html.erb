@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <title>Workspace</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
+  <!--google font-->
+  <link href="https://fonts.googleapis.com/css?family=Jua|Nanum+Gothic|Righteous" rel="stylesheet">
+
+  <%= csrf_meta_tags %>
+  
+  <!-- jQuery -->
+
+  <!--Template-->
+</head>
+<body>
+  <%= yield %>
+</body>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+<script>
+  history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+  };
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() { 
+  var chance = "<%=session[:times]%>"
+  if (<%=session[:res]%>==1) {
+    $('#chb').attr("type", "hidden");
+    var go_time = parseInt(new Date(chance).getTime()/1000); //풀리는 시간
+    var check_time = parseInt(new Date().getTime()/1000); //현재 시간
+    
+    var gogo = go_time-check_time;
+    // alert(timer_m+"분"+timer_s+"초");
+    
+    var go = "다시풀 수 있을 때까지 " + gogo + "초";
+    document.getElementById("yes").innerHTML = go;
+    
+    function gotime() {
+      gogo--;
+
+      go = "다시풀 수 있을 때까지 " + gogo + "초";
+      document.getElementById("yes").innerHTML = go;
+      
+      if (gogo<=0) {
+        clearInterval(lets);
+        $('#chb').attr("type", "submit");
+        
+        document.getElementById("yes").innerHTML = "";
+      }
+    }
+    
+    var lets = setInterval(gotime,1000);
+  }
+  
+});
+  
+</script>
+<script>
+  $(document).ready(function() { 
+    var time = $('.timer').text();
+    
+    var endtime = parseInt(new Date(time).getTime()/1000) + (60*20);
+    var nowtime = parseInt(new Date().getTime()/1000);
+    
+    var timer = endtime-nowtime;
+    var timer_m = parseInt(timer/60);
+    var timer_s = timer%60;
+    // alert(timer_m+"분"+timer_s+"초");
+    
+    var msg = timer_m + "분 " + timer_s + "초";
+    document.getElementById("ViewTimer").innerHTML = msg;
+    
+    function realtime() {
+      timer--;
+      timer_m = parseInt(timer/60);
+      timer_s = timer%60;
+      msg = timer_m + "분 " + timer_s + "초";
+      document.getElementById("ViewTimer").innerHTML = msg;
+      
+      if (timer<=0) {
+        clearInterval(stop);
+        alert("정보대가 멸망하였습니다.");
+        location.href="/home/fail"
+      }
+    }
+    var stop = setInterval(realtime,1000);
+  });
+</script>
+</html>

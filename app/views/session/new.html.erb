@@ -1,0 +1,58 @@
+<div class="wrap_session">
+  <form action ="/session/create" method="post" name="inputform">
+    <div class="form-group">
+      <p>단과대학</p>
+      <select class="form-control" name="user_major" id="exampleFormControlSelect1">
+        <option value="경영대학">경영대학</option>
+        <option value="공과대학">공과대학</option>
+        <option value="도시과학대학">도시과학대학</option>
+        <option value="동북아국제통상학부">동북아국제통상학부</option>
+        <option value="법정경대학">법정경대학</option>
+        <option value="사범대학">사범대학</option>
+        <option value="사회과학대학">사회과학대학</option>
+        <option value="생명과학기술대학">생명과학기술대학</option>
+        <option value="예술체육대학">예술체육대학</option>
+        <option value="인문대학">인문대학</option>
+        <option value="자연과학대학">자연과학대학</option>
+        <option selected value="정보기술대학">정보기술대학</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <p>학번</p>
+      <input class="form-control" type="text" id="user_number" name="user_number" placeholder="학번을 입력하세요">
+    </div>
+    <div class="form-group">
+      <p>이름</p>
+      <input class="form-control" type="text" id="user_name" name="user_name" placeholder="이름을 입력하세요">
+    </div>
+    <div class="form-group">
+      <input type="button" id="button" class="btn btn-light" onclick="validate();" value="시작" >
+    </div>
+  </form>
+</div>
+
+<script type="text/javascript">
+  function validate() {
+    var userNumber = document.inputform.user_number;
+    var userName = document.inputform.user_name;
+    
+    if(userNumber.value == "") {
+      alert("학번을 입력해주세요!");
+      document.inputform.userNumber.focus();
+      document.getElementById('user_number').select();
+      return false;
+    }else if(userNumber.value.length != 9) {
+      alert("인천대 학번은 9자리라구!");
+      document.inputform.userNumber.focus();
+      document.getElementById('user_number').select();
+      return false;
+    }else if(userName.value == "") {
+      alert("이름을 입력해주세요!");
+      document.inputform.userName.focus();
+      document.getElementById('user_name').select();
+      return false;
+    }else{
+      document.inputform.submit();
+    }
+  }
+</script>

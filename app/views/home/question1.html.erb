@@ -1,0 +1,21 @@
+<%= render 'header' %>
+<div class="wrap_home">
+  <form action="/home/answer1" method="post" name="inputform">
+    <div class="inform">
+      <p><strong>그렇다면 오늘은 무슨요일일까?</strong></p>
+    </div>
+      <div class= writeAnswer>
+          
+      <div class= "cols">
+        <div class="lock">
+          <input type="text" class="long" name="text1"></input>
+        </div>
+      </div>
+      
+       
+      <button type="submit" class="btn btn-primary" >다음</button>
+    </div>
+  </form>
+  <div class="timer"><%=@time%></div>
+  <div id="yes"><%=session[:wrong]%></div>
+</div>

@@ -1,0 +1,26 @@
+<form action = '/home/test' method = 'post'>
+  <div class = "bt_up">▲</div>
+  <input type = "text" name ="test_1" class="num" value="0" readonly></input>
+  <div class = "bt_down">▼</div>
+
+  <button type="submit">▼</button>
+</form>
+
+<%=@testtime%>분
+<%=@testtwo%>초
+
+<div class="ans" style="display:none;"><%=@test%></div>
+
+<script>
+  function button1_click() {
+	var ans = $('.ans').text();
+	var you = <%=@test%>
+	alert(you);
+	if (ans == you) {
+	  alert("정답");
+	}
+	else {
+	  alert("꺼져 " + you);
+	}
+}
+</script>

@@ -1,0 +1,30 @@
+<%= render 'header' %>
+<div class="wrap_home">
+  <div class="inform">
+      <img src="/assets/q3.png" width="300px"></img>
+      <p><strong>규칙을 찾아 숫자를 입력하시오</strong></p>
+    </div>
+  <form action="/home/answer3" method="post" name="inputform">
+    
+      <div class= writeAnswer>
+          
+      <div class= "cols">
+        <div class="lock">
+          <input type="text" class="str" name="text1" maxlength="1" style="border-color: #ff0000;"></input>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" >다음</button>
+  </form>
+  <div class="timer"><%=@time%></div>
+  <div id="yes"><%=session[:wrong]%></div>
+</div>
+
+<script>
+  function autotab(current,to){
+    if (current.getAttribute && 
+      current.value.length==current.getAttribute("maxlength")) {
+        to.focus() 
+    }
+  }
+</script>
